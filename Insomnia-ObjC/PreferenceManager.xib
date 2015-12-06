@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="9060" systemVersion="14F1021" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="9060"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="PreferenceManager">
+            <connections>
+                <outlet property="checkbox" destination="Fkg-3F-OCV" id="Ukx-Dv-F9b"/>
+                <outlet property="view" destination="se5-gp-TjO" id="G6k-Qq-mJP"/>
+                <outlet property="window" destination="F0z-JX-Cv5" id="BCx-Lc-wHU"/>
+            </connections>
+        </customObject>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <window title="Insomnia Preferences" allowsToolTipsWhenApplicationIsInactive="NO" autorecalculatesKeyViewLoop="NO" oneShot="NO" releasedWhenClosed="NO" animationBehavior="default" id="F0z-JX-Cv5">
+            <windowStyleMask key="styleMask" titled="YES" closable="YES" miniaturizable="YES"/>
+            <windowPositionMask key="initialPositionMask" topStrut="YES" bottomStrut="YES"/>
+            <rect key="contentRect" x="196" y="1082" width="269" height="152"/>
+            <rect key="screenRect" x="0.0" y="0.0" width="2560" height="1577"/>
+            <view key="contentView" id="se5-gp-TjO">
+                <rect key="frame" x="0.0" y="0.0" width="269" height="152"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <button fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fkg-3F-OCV">
+                        <rect key="frame" x="36" y="86" width="196" height="18"/>
+                        <buttonCell key="cell" type="check" title="Disable Screensaver at start" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="bEe-1f-YxW">
+                            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+                            <font key="font" metaFont="system"/>
+                            <connections>
+                                <action selector="changeDefaultDisableScreensaver:" target="-2" id="HKo-Us-DH5"/>
+                            </connections>
+                        </buttonCell>
+                        <connections>
+                            <binding destination="-2" name="value" keyPath="bDefaultDisableScreensaver" id="5ax-jc-ec3"/>
+                        </connections>
+                    </button>
+                </subviews>
+            </view>
+            <connections>
+                <outlet property="delegate" destination="-2" id="0bl-1N-AYu"/>
+            </connections>
+            <point key="canvasLocation" x="134.5" y="372"/>
+        </window>
+        <buttonCell type="check" title="Disable Screensaver at start" bezelStyle="regularSquare" imagePosition="left" state="on" inset="2" id="2X7-nL-mI0">
+            <behavior key="behavior" changeContents="YES" doesNotDimImage="YES" lightByContents="YES"/>
+            <font key="font" metaFont="system"/>
+        </buttonCell>
+        <userDefaultsController representsSharedInstance="YES" id="2ex-IX-VZf"/>
+    </objects>
+</document>
